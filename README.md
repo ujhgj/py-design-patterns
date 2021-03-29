@@ -2,9 +2,15 @@
 
 # Python-Flavored Design Patterns
 
-## venv
+## Patterns Collection
 
-Best to use venv to run a dedicated environment:
+- Creational:
+  - [builder](patterns/creational/builder.py) ([tests](tests/patterns/creational/builder.py))
+  - [singleton](patterns/creational/singleton.py) ([tests](tests/patterns/creational/singleton.py))
+
+## Tests
+
+Best to use venv to run a dedicated environment for tests:
 1. Create environment:
     ```bash
     python3 -m venv venv
@@ -18,8 +24,7 @@ Best to use venv to run a dedicated environment:
     pip install -r requirements.txt
     ```
 
-## Tests
-
-```bash
-python -m pytest
-```
+1. Run the tests
+    ```bash
+    python -m pytest
+    ```
