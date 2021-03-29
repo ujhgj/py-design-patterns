@@ -1,4 +1,4 @@
-class Singleton(object):
+class Singleton:
     """
     Implementation for singleton pattern
     """
