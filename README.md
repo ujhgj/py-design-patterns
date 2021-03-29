@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/ujhgj/py-design-patterns.svg?branch=master)](https://travis-ci.com/ujhgj/py-design-patterns)
 
-# Python-flavored Design Patterns
+# Python-Flavored Design Patterns
 
 ## venv
 
