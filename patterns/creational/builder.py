@@ -1,36 +1,121 @@
-class House:
-    footing = False
-    walls = False
-    roof = False
-    garage = False
-    pool = False
-    chimney = False
+class CarAttributes:
+    gps = False
+    engine = False
+    trip_computer = False
+    seats = False
+    wheels = False
 
-class HouseBuilder:
-    house = None
+class Car(CarAttributes):
+    """
+    A vehicle
+    """
+    pass
 
-    def __init__(self):
-        self.house = House()
+class CarManual(CarAttributes):
+    """
+    A documentation for a car
+    """
+    pass
 
-    def build_footing(self):
-        self.house.footing = True
+class BuilderInterface:
+    """
+    Design Pattern: Builder
+    """
+    def set_seats(self):
         return self
 
-    def build_walls(self):
-        self.house.walls = True
+    def set_engine(self):
         return self
 
-    def build_roof(self):
-        self.house.roof = True
+    def set_trip_computer(self):
         return self
 
-    def build_pool(self):
-        self.house.pool = True
+    def set_gps(self):
         return self
 
-    def build_chimney(self):
-        self.house.chimney = True
+    def set_wheels(self):
         return self
 
     def get_result(self):
-        return self.house
+        pass
+
+class CarBuilder(BuilderInterface):
+    """
+    Builder for a car
+    """
+    def __init__(self):
+        self.car = Car()
+
+    def set_seats(self):
+        self.car.seats = True
+        return self
+
+    def set_engine(self):
+        self.car.engine = True
+        return self
+
+    def set_trip_computer(self):
+        self.car.trip_computer = True
+        return self
+
+    def set_gps(self):
+        self.car.gps = True
+        return self
+
+    def set_wheels(self):
+        self.car.wheels = True
+        return self
+
+    def get_result(self):
+        return self.car
+
+class CarManualBuilder(BuilderInterface):
+    """
+    """
+    def __init__(self):
+        self.car_manual = CarManual()
+
+    def set_seats(self):
+        self.car_manual.seats = True
+        return self
+
+    def set_engine(self):
+        self.car_manual.engine = True
+        return self
+
+    def set_trip_computer(self):
+        self.car_manual.trip_computer = True
+        return self
+
+    def set_gps(self):
+        self.car_manual.gps = True
+        return self
+
+    def set_wheels(self):
+        self.car_manual.wheels = True
+        return self
+
+    def get_result(self):
+        return self.car_manual
+
+class Director:
+    """
+    Design Pattern: Director
+    """
+    def make_van(self, builder: BuilderInterface):
+        return builder\
+            .set_engine()\
+            .set_wheels()\
+            .set_wheels()\
+            .set_gps()\
+            .set_trip_computer()\
+            .get_result()
+
+    def make_sports_car(self, builder: BuilderInterface):
+        return builder\
+            .set_wheels() \
+            .set_gps() \
+            .set_engine() \
+            .set_wheels() \
+            .set_trip_computer() \
+            .get_result()

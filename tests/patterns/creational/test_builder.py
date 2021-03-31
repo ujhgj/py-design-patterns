@@ -1,9 +1,17 @@
 from patterns.creational.builder import *
 
-def test_build():
-    builder = HouseBuilder() \
-        .build_footing()\
-        .build_walls()\
-        .build_roof()\
+def test_builder():
+    car_builder = CarBuilder()\
+        .set_engine()\
+        .set_wheels()\
 
-    assert isinstance(builder.get_result(), House)
+    assert isinstance(car_builder, CarBuilder)
+    assert isinstance(car_builder.get_result(), Car)
+
+def test_director():
+    director = Director()
+    sports_car = director.make_sports_car(CarBuilder())
+    sports_car_manual = director.make_sports_car(CarManualBuilder())
+
+    assert isinstance(sports_car, Car)
+    assert isinstance(sports_car_manual, CarManual)
