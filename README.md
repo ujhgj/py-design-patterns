@@ -5,8 +5,8 @@
 ## Patterns Collection
 
 - Creational:
-  - [Singleton](patterns/creational/singleton.py) ([tests](tests/patterns/creational/singleton.py))
-  - [Builder and Director](patterns/creational/builder.py) ([tests](tests/patterns/creational/builder.py))
+  - [Singleton](patterns/creational/singleton.py) ([tests](tests/patterns/creational/test_singleton.py))
+  - [Builder and Director](patterns/creational/builder.py) ([tests](tests/patterns/creational/test_builder.py))
 
 ## Tests
 
