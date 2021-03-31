@@ -28,3 +28,6 @@ Best to use venv to run a dedicated environment for tests:
     ```bash
     python -m pytest
     ```
+
+## TODO
+1. Documentation
