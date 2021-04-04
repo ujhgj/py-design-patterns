@@ -1,9 +1,10 @@
 class CarAttributes:
-    gps = False
-    engine = False
-    trip_computer = False
-    seats = False
-    wheels = False
+    def __init__(self):
+        self.gps = False
+        self.engine = False
+        self.trip_computer = False
+        self.seats = False
+        self.wheels = False
 
 class Car(CarAttributes):
     """
